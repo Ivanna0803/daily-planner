@@ -3,6 +3,7 @@ let currentDay = $('#currentDay');
 let saveButton = $('.saveBtn');
 
 // Array of all timeblocks, which access by ID 
+// That will be used during displayScheduler function 
 let timeBlockArray = [];
 $(".time-block").each(function(){ 
     timeBlockArray.push(this.id);
@@ -13,6 +14,15 @@ function displayTime() {
     // Variable that shows real time by using Moment.js
     const rightNow = moment().format('DD MMM YYYY [at] hh:mm a');
     currentDay.text(rightNow);
+}
+
+// Function that deletes time classes(colors) from timeBlocks
+// Will be called in displayScheduler function
+function clearTimeCss(elemId)
+{
+    $(elemId).removeClass("past");
+    $(elemId).removeClass("future");
+    $(elemId).removeClass("present");
 }
 
 // Function that adds different colors to timeBlocks based on the current time
@@ -45,10 +55,13 @@ function displayScheduler() {
             elemTime += 12;
         }
 
+        // Call function that removes timeBlock classes
+        clearTimeCss('#' + timeBlock);
+        
         // If elemTime bigger than current time, then we add future class to timeBlock
         if (elemTime > currentTime) {
             $('#' + timeBlock).addClass("future");
-            
+
         // If elemTime equal to currentTime, than we add present class to timeBlock
         } else if (elemTime === currentTime) {
             $('#' + timeBlock).addClass("present");
