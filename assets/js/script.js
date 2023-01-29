@@ -78,12 +78,17 @@ function displayScheduler() {
     }
 }
 
-// Call function
-displayScheduler();
+// Function that calls displayTime and displayScheduler functions
+function updateScheduler() {
+    displayTime();
+    displayScheduler();
+}
 
-// Method that calls displayTime function every minute
-displayTime();
-setInterval(displayTime, 60000);
+// Calls updateScheduler function
+updateScheduler();
+
+// Method that calls updateScheduler function every minute
+setInterval(updateScheduler, 60000);
 
 // Save to the local storage 
 saveButton.on("click", function () {
