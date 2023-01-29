@@ -10,7 +10,7 @@ JavaScript Calendar application that allows user to save events for standard bus
 "N/A"
 
 ## Usage
- 1. Follow the link to open deployed application: 
+ 1. Follow the link to open deployed application: https://ivanna0803.github.io/daily-planner/
  2. Click on the timeblock to enter the event  
  3. Press the blue button to save your event in the local storage 
  4. Refresh the page to check if events are saved
