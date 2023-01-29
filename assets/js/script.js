@@ -7,6 +7,9 @@ let saveButton = $('.saveBtn');
 let timeBlockArray = [];
 $(".time-block").each(function(){ 
     timeBlockArray.push(this.id);
+    // Takes second child (textarea) from timeBlock and 
+    // setup value for child from local storage
+    this.children[1].value = localStorage.getItem(this.id);
  });
 
 // Function that displaying current date and time
@@ -57,7 +60,7 @@ function displayScheduler() {
 
         // Call function that removes timeBlock classes
         clearTimeCss('#' + timeBlock);
-        
+
         // If elemTime bigger than current time, then we add future class to timeBlock
         if (elemTime > currentTime) {
             $('#' + timeBlock).addClass("future");
@@ -81,3 +84,10 @@ displayScheduler();
 // Method that calls displayTime function every minute
 displayTime();
 setInterval(displayTime, 60000);
+
+// Save to the local storage 
+saveButton.on("click", function () {
+    let time = $(this).parent().attr("id");
+    let event = $(this).siblings(".description").val();
+    localStorage.setItem(time, event);
+})
