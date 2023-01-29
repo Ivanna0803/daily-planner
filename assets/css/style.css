@@ -14,11 +14,11 @@ textarea {
 }
 
 .jumbotron {
+  background: linear-gradient(#43cea2, #185a9d);
   text-align: center;
   background-color: transparent;
-  color: black;
+  color: rgb(255, 244, 244);
   border-radius: 0;
-  border-bottom: 10px solid black;
 }
 
 .description {
