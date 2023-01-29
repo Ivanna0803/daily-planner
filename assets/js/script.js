@@ -14,3 +14,7 @@ function displayTime() {
     const rightNow = moment().format('DD MMM YYYY [at] hh:mm a');
     currentDay.text(rightNow);
 }
+
+// Method that calls displayTime function every minute
+displayTime();
+setInterval(displayTime, 60000);
