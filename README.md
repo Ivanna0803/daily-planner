@@ -1,4 +1,4 @@
-# Daily Planner
+# Your Work Day Scheduler
 
 ## Description
 JavaScript Calendar application that allows user to save events for standard business hours of the day. In this application the colors of the calendar's timebocks are changing based on the current time - grey color means past time, red for present time and green for future time. Also, all entered events can be saved in the local storage when clicked on save button. 
